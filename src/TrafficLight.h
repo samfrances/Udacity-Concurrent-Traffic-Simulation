@@ -23,7 +23,7 @@ public:
     T receive();
 
 private:
-    td::mutex _mutex;
+    std::mutex _mutex;
     std::condition_variable _cond;
     std::deque<T> _queue;
 };
