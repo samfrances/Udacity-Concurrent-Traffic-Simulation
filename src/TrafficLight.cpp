@@ -96,6 +96,9 @@ void TrafficLight::cycleThroughPhases()
             togglePhase();
         }
 
+        // Reset clock
+        lastUpdate = std::chrono::system_clock::now();
+
     }
 
 }
