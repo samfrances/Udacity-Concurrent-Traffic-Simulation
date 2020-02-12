@@ -106,16 +106,11 @@ void TrafficLight::cycleThroughPhases()
 double TrafficLight::randRange(double lower_bound, double upper_bound) {
 
     // Got help from here: https://stackoverflow.com/a/9324796/1256529
-    // std::uniform_real_distribution<double> unif(lower_bound, upper_bound);
-    // std::default_random_engine re;
-    // double result = unif(re);
+    std::uniform_real_distribution<double> unif(lower_bound,upper_bound);
+    std::default_random_engine re;
+    double result = unif(re);
 
-    // return result;
-
-    std::random_device rd;
-    std::mt19937 re(rd()); // seed the generator
-    std::uniform_real_distribution<double> unif(lower_bound, lower_bound);
-    return unif(re);
+    return result;
 }
 
 void TrafficLight::togglePhase() {
