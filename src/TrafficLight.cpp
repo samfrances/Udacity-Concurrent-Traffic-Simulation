@@ -94,10 +94,9 @@ void TrafficLight::cycleThroughPhases()
 
         if (timeSinceLastUpdate >= cycleDuration) {
             togglePhase();
+            // Reset clock
+            lastUpdate = std::chrono::system_clock::now();
         }
-
-        // Reset clock
-        lastUpdate = std::chrono::system_clock::now();
 
     }
 
