@@ -100,7 +100,7 @@ void TrafficLight::cycleThroughPhases()
 // Generate a random double between lower_bound and upper_bound
 double TrafficLight::randRange(double lower_bound, double upper_bound) {
 
-    // Got help from here:
+    // This function is a comination of the solutions given in the following:
     // https://stackoverflow.com/a/9324796/1256529
     // https://stackoverflow.com/a/22907537/1256529
     std::random_device device;
