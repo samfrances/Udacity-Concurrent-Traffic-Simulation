@@ -48,7 +48,7 @@ public:
 private:
     // typical behaviour methods
     void cycleThroughPhases();
-    randRange(double lower_bound, double upper_bound);
+    double randRange(double lower_bound, double upper_bound);
     void togglePhase();
 
     // FP.4b : create a private member of type MessageQueue for messages of type TrafficLightPhase
