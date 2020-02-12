@@ -109,9 +109,8 @@ double TrafficLight::randRange(double lower_bound, double upper_bound) {
     std::random_device device;
     std::uniform_real_distribution<double> unif(lower_bound,upper_bound);
     std::default_random_engine re(device());
-    double result = unif(re);
+    return unif(re);
 
-    return result;
 }
 
 void TrafficLight::togglePhase() {
