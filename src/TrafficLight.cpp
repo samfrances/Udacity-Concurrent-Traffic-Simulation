@@ -86,6 +86,12 @@ void TrafficLight::cycleThroughPhases()
 
         // compute time difference to stop watch
         long timeSinceLastUpdate = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - lastUpdate).count();
+
+        std::unique_lock<std::mutex> lck(_mtx);
+        std::cout << "cycleDuration: " << cycleDuration << std::endl;
+        std::cout << "timeSinceLastUpdate: " << timeSinceLastUpdate << std::endl;
+        lck.unlock();
+
         if (timeSinceLastUpdate >= cycleDuration) {
             togglePhase();
         }
