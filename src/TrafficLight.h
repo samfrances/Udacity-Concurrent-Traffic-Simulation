@@ -19,9 +19,13 @@ template <class T>
 class MessageQueue
 {
 public:
+    void send(T &&msg);
+    T receive();
 
 private:
-
+    td::mutex _mutex;
+    std::condition_variable _cond;
+    std::deque<T> _queue;
 };
 
 enum TrafficLightPhase { red, green };
